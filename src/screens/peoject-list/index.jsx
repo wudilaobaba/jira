@@ -9,6 +9,7 @@ export const ProjectListScreen = () => {
   const [users, setUsers] = useState([])
   const [param, setParam] = useState({ name: "", personId: "" })
   const [list, setList] = useState([])
+
   useEffect(() => {
     fetch(`${apiUrl}/users`).then(async response => {
       if (response.ok) {
