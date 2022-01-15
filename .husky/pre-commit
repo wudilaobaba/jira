@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+echo '我要提交代码啦！！！！！！！'
+npx lint-staged
