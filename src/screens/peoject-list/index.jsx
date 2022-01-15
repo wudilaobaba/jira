@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { cleanObject, useMount } from "../../utils"
 import qs from "qs"
 
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = process.env.REACT_APP_API_URL
 
 export const ProjectListScreen = () => {
   const [users, setUsers] = useState([]);
