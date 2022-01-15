@@ -11,7 +11,7 @@
         npx mrm lint-staged 执行后package.json会发生变化，如下：
         自己想对哪些文件进行格式化，就自己加格式名称
        "lint-staged": {
-           "*.{js,css,md}": "prettier --write"
+           "*.{js,css,md,jsx,tsx,ts}": "prettier --write"
         }
         第二个变化就是加入了eslint
         "eslintConfig": {
