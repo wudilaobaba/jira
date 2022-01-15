@@ -1,5 +1,5 @@
 import { SearchPanel } from "./search-panel";
-import { List } from "./list";
+import { List } from "./list"
 import { useEffect, useState } from 'react'
 import { cleanObject, useMount } from "../../utils"
 import qs from "qs"
