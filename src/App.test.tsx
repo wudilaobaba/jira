@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
-import { isFalsy } from "./utils/index";
+import { isFalsy, cleanObject } from "./utils";
 
 test("isFalsyFun", () => {
   // render(<App />);
@@ -9,3 +9,5 @@ test("isFalsyFun", () => {
   // expect(linkElement).toBeInTheDocument()
   expect(isFalsy(0)).toBe(false);
 });
+
+test("cleanObject", () => {});
