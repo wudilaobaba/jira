@@ -20,14 +20,14 @@ export const ProjectListScreen = () => {
   });
 
   useEffect(() => {
-    fetch(`${apiUrl}/projects?${qs.stringify(cleanObject(param))}`).then(
-      async (response) => {
-        if (response.ok) {
-          const result = await response.json();
-          setList(result);
-        }
+    fetch(
+      `${apiUrl}/projects?${qs.stringify(cleanObject(debounceParam))}`
+    ).then(async (response) => {
+      if (response.ok) {
+        const result = await response.json();
+        setList(result);
       }
-    );
+    });
   }, [debounceParam]);
 
   return (

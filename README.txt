@@ -64,8 +64,12 @@
 
 5. <td>{(users.find(user=>user.id === item.personId))?.name || "未知"}</td>
       问号ts语法 也是js语法
+      当问号前面有可能是undefined | null | xxx.yyy无意义 的时候才使用❓
+        如：23.age  "222".school 等
 
 6. 将对象转为query形式的字符串：yarn add qs
 7. 自定义hook util/useMount
+
+8.确定不需要点的时候，就用unknown代替any
 
 
