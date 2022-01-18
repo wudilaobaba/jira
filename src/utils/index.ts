@@ -33,7 +33,7 @@ export const useMount = (callback: () => void) => {
  * 防抖钩子
  * 后面用范型
  */
-export const useDebounce = (value: unknown, delay?: number): any => {
+export const useDebounce = <T>(value: T, delay?: number): T => {
   const [debouncedValue, setDebouncedValue] = useState(value);
   useEffect(() => {
     const timeout = setTimeout(() => setDebouncedValue(value), delay);
