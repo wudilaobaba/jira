@@ -8,7 +8,7 @@ export const isFalsy = (value: unknown) => (value === 0 ? false : !value);
  * 对象拷贝
  * @param object
  */
-export const cleanObject = (object: object) => {
+export const cleanObject = (object: any) => {
   const result = { ...object };
   Object.keys(result).forEach((key) => {
     // @ts-ignore

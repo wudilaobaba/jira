@@ -86,3 +86,8 @@ const [arr,setArr] = useState<C[]>(value)
   }
 
 
+11.typescript是鸭子类型🦆，是面向接口编程，而不是面向对象编程，只要长的像就可以了
+
+12.json-server配置中间件，自定义非restFulAPI
+  package.json中：
+    "yarn json-server --watch ./__json_server_mock__/db.json --port 3001 --middlewares ./__json_server_mock__/middleware.js"
