@@ -74,4 +74,15 @@
 
 9.箭头函数的泛型：const fun = <T>(): T=>{}
 
+10. 删除数组中的值之前，建议copy一下
+const [arr,setArr] = useState<C[]>(value)
+  const clear: clearFun = ()=>{
+    setArr([])
+  }
+  const removeIndex:removeFun = (index: number)=>{
+    const copy = [...arr] // 删除数组中的值之前，建议copy一下
+    copy.splice(index,1)
+    setArr(copy)
+  }
+
 

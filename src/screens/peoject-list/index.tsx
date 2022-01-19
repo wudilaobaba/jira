@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { cleanObject, useMount } from "../../utils";
 import { useDebounce } from "../../utils";
 import qs from "qs";
+import { Test } from "./Test";
 const apiUrl = process.env.REACT_APP_API_URL;
 
 export const ProjectListScreen = () => {
@@ -34,6 +35,7 @@ export const ProjectListScreen = () => {
     <>
       <SearchPanel users={users} param={param} setParam={setParam} />
       <List list={list} users={users} />
+      <Test />
     </>
   );
 };
