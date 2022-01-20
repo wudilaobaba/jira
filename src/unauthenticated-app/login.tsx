@@ -1,6 +1,5 @@
 import { FormEvent } from "react";
 import { useAuth } from "context/auth-context";
-const apiUrl = process.env.REACT_APP_API_URL;
 
 export const LoginScreen = () => {
   const { user, login } = useAuth();
@@ -12,13 +11,10 @@ export const LoginScreen = () => {
     const password = (event.currentTarget.elements[1] as HTMLInputElement)
       .value;
     try {
+      console.log(333);
       // 登录
       const result = await login({ username, password });
       console.log(result);
-
-      // 注册
-      // const rg = await register({ username, password });
-      // console.log(rg);
     } catch (e) {
       console.log(e);
     }

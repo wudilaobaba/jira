@@ -160,4 +160,6 @@ const [arr,setArr] = useState<C[]>(value)
     login: (param:AuthForm)=>Promise<void>
 
 18.区分非登录状态和登录状态
-    unauthenticated-app 和
+    unauthenticated-app 和  authenticated-app
+
+19. axios 和 fetch 的表现不一样，axios可以直接在返回状态不为2xx的时候抛出异常
