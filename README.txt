@@ -174,3 +174,17 @@ const [arr,setArr] = useState<C[]>(value)
       02. Partial<Person> 相当于把Person接口的所有属性都变成了可选属性
       03. Omit<Person,'name'> 相当于删除了Person接口中的name属性
           Omit<Person,'name'｜'age'> 相当于删除了Person接口中的name和age属性
+
+21.修改antd的主题色
+    yarn add @craco/craco craco-less
+    修改package.json的script: 将react-scripts替换为craco
+    创建craco.config.js
+
+22.Table组件中columns的类型是由dataSource推断出来的
+
+23.Table组件中的render
+    // 01. render的第一个参数与dataIndex遥相呼应！！！！！！
+    // dataIndex: 'organization',
+    // render:(value, project)=><span>{value}</span>
+    // 02. 如果没有dataIndex，那么value就是list中的每一条数据
+    render:(value, project)=><span>{JSON.stringify(value)}</span>
