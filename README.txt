@@ -163,3 +163,14 @@ const [arr,setArr] = useState<C[]>(value)
     unauthenticated-app 和  authenticated-app
 
 19. axios 和 fetch 的表现不一样，axios可以直接在返回状态不为2xx的时候抛出异常
+
+20. type和interface
+    type是类型别名
+    二者区别：
+      定义联合类型的时候，只能使用type
+      js中的typeof是在运行时运行的
+      ts中的typeof是在开发时运行的 typeof 对象，返回一个新的类型
+      01. Parameters<typeof fun> 返回值是fun的参数类型
+      02. Partial<Person> 相当于把Person接口的所有属性都变成了可选属性
+      03. Omit<Person,'name'> 相当于删除了Person接口中的name属性
+          Omit<Person,'name'｜'age'> 相当于删除了Person接口中的name和age属性
