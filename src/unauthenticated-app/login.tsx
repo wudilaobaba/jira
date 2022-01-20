@@ -3,7 +3,7 @@ import { useAuth } from "context/auth-context";
 const apiUrl = process.env.REACT_APP_API_URL;
 
 export const LoginScreen = () => {
-  const { user, logout, login, register } = useAuth();
+  const { user, login } = useAuth();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // 阻止默认行为
@@ -36,14 +36,6 @@ export const LoginScreen = () => {
         <input type="password" id={"password"} />
       </div>
       <button type={"submit"}>登录</button>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          logout();
-        }}
-      >
-        退出
-      </button>
     </form>
   );
 };

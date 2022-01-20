@@ -1,9 +1,8 @@
 import { FormEvent } from "react";
 import { useAuth } from "context/auth-context";
-const apiUrl = process.env.REACT_APP_API_URL;
 
-export const LoginScreen = () => {
-  const { user, logout, login, register } = useAuth();
+export const RegisterScreen = () => {
+  const { user, register } = useAuth();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // 阻止默认行为
@@ -12,13 +11,9 @@ export const LoginScreen = () => {
     const password = (event.currentTarget.elements[1] as HTMLInputElement)
       .value;
     try {
-      // 登录
-      const result = await login({ username, password });
-      console.log(result);
-
       // 注册
-      // const rg = await register({ username, password });
-      // console.log(rg);
+      const rg = await register({ username, password });
+      console.log(rg);
     } catch (e) {
       console.log(e);
     }
@@ -35,15 +30,7 @@ export const LoginScreen = () => {
         <label htmlFor="password">密码</label>
         <input type="password" id={"password"} />
       </div>
-      <button type={"submit"}>登录</button>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          logout();
-        }}
-      >
-        退出
-      </button>
+      <button type={"submit"}>注册</button>
     </form>
   );
 };

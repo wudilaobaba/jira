@@ -86,8 +86,78 @@ const [arr,setArr] = useState<C[]>(value)
   }
 
 
-11.typescript是鸭子类型🦆，是面向接口编程，而不是面向对象编程，只要长的像就可以了
+11.typescript是鸭子类型🦆🦆🦆，是面向接口编程，而不是面向对象编程，只要长的像就可以了
 
 12.json-server配置中间件，自定义非restFulAPI
   package.json中：
     "yarn json-server --watch ./__json_server_mock__/db.json --port 3001 --middlewares ./__json_server_mock__/middleware.js"
+
+
+13.干掉__json_server_mock__ 使用 npx imooc-jira-tool 真实接口
+    或：
+    1.yarn add jira-dev-tool@latest
+    2.npx msw init public
+    项目index.tsx中引入 import {loadDevTools} from 'jira-dev-tool'
+    loadDevTools(()=>
+      ReactDOM.render(...)
+    )
+
+14. useContext的使用：
+    import React, {createContext, useContext} from 'react'
+
+    // =======================================  STEP01. 定义context数据
+    const MyContext = createContext(10)
+
+    // =======================================  STEP03. 子组件中使用数据（前提是Context中必须包含了该子组件）
+    function Child() {
+      // 数据消费者
+      const value = useContext(MyContext);
+      return(
+        // <MyContext.Consumer>
+        //   {
+        //     (value: number)=>(<div>{value}</div>)
+        //   }
+        // </MyContext.Consumer>
+        <div>{value}</div>
+      )
+    }
+
+    // =======================================  STEP02. 父组件中包含自组件并给值
+    function ContextPage() {
+      return (
+        <div>
+          <h3>useContext:跨组件层级获取数据时，简化获取数据时的代码</h3>
+          <MyContext.Provider value={77}>
+            <Child/>
+          </MyContext.Provider>
+        </div>
+      )
+    }
+    export default ContextPage
+
+15. 组件的props.children是 React.ReactNode类型
+    <div>
+      <span>22</span>
+    </div>
+    相当于：
+    <div children={<span>22</span>}/>
+
+16.Promise
+    const t1 = async ()=>Promise.reject("wronG")
+      const t2 = async ()=>{
+        // 主要看返回什么状态的Promise
+        try{
+            //  成功的Promise走这里
+          const a = await t1();
+        }catch (e) {
+            //  失败的Promise走这里
+          console.log(e);
+        }
+      }
+    t2()
+
+17. async函数的类型定义：
+    login: (param:AuthForm)=>Promise<void>
+
+18.区分非登录状态和登录状态
+    unauthenticated-app 和
