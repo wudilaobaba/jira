@@ -1,4 +1,4 @@
-1.配置绝对路径：@!!w
+1.配置绝对路径：@!!ww
     tsconfig.json中配置："baseUrl": "./src",
     这样import就不需要频繁的../../../了
 
